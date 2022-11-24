@@ -1,0 +1,20 @@
+{
+  "name": "@psycle/intl-maintainer",
+  "version": "0.0.0",
+  "description": "Maintain your INTL JSON files",
+  "main": "bin/index.js",
+  "bin": "bin/index.js",
+  "author": "Psycle Research",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@formatjs/ts-transformer": "^3.11.1",
+    "commander": "^9.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3"
+  }
+}
