@@ -5,7 +5,11 @@ const KNOW_COMMANDS = ['update']
 
 async function main(argv: string[]) {
     program
-        .version('0.0.0', '-v, --version', 'Shows the version number')
+        .version(
+            process.env.npm_package_version as string,
+            '-v, --version',
+            'Shows the version number',
+        )
         .helpOption('-h, --help', 'Show this help message')
         .usage('<command> [flags]')
         .action((command) => {

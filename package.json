@@ -1,6 +1,6 @@
 {
   "name": "@psycle/intl-maintainer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Maintain your INTL JSON files",
   "main": "dist/index.js",
   "bin": {

@@ -25,3 +25,15 @@ You can now test the tool by running:
 ```
 npx @psycle/intl-maintainer
 ```
+
+> If you get the following:
+>
+> ```
+> sh: 1: intl-maintainer: Permission denied
+> ```
+>
+> Try executing:
+>
+> ```
+> chmod +x bin/index.js
+> ```
