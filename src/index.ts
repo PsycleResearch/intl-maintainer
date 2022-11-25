@@ -1,5 +1,5 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
-const currentDateAndTime = new Date().toISOString()
+'use strict'
 
-console.log(currentDateAndTime)
+require('./cli').default(process.argv)

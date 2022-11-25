@@ -1,17 +1,19 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2017",
-    "lib": ["es2015"],
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "bin",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "lib": ["es2021"],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "bin",
+        "baseUrl": ".",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "strict": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true
     },
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  },
-  "include": ["src/**/*"]
+    "include": ["src/**/*"]
 }

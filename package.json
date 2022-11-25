@@ -2,12 +2,17 @@
   "name": "@psycle/intl-maintainer",
   "version": "0.0.0",
   "description": "Maintain your INTL JSON files",
-  "main": "bin/index.js",
-  "bin": "bin/index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "intl-maintainer": "bin/index.js"
+  },
   "author": "Psycle Research",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "npx tsc",
+    "pretty": "prettier --write src/.",
+    "pretty:check": "prettier --check src/.",
+    "lint": "eslint --ext .ts,.js.json src/"
   },
   "dependencies": {
     "@formatjs/ts-transformer": "^3.11.1",
@@ -15,6 +20,15 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
-    "typescript": "^4.9.3"
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "2.8.0",
+    "typescript": "^4.9"
   }
 }
