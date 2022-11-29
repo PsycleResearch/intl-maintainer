@@ -17,19 +17,13 @@ export default async function update(
     const fullSource = path.resolve(process.cwd(), source)
     const fullDestinations = destinations
         .filter(
-            (dest) =>
-                dest !== undefined &&
-                dest !== null &&
-                dest !== '' &&
-                dest.trim() !== '',
+            (dest) => dest !== undefined && dest !== null && dest.trim() !== '',
         )
         .map((dest) => path.resolve(process.cwd(), dest))
 
     const sourceMessages = await extractMessagesFromFile(fullSource)
 
-    for (let i = 0; i < fullDestinations.length; i++) {
-        const destination = destinations[i]
-
+    for (const destination of fullDestinations) {
         console.log('Processing ' + destination)
 
         const exists = await fs.pathExists(destination)
@@ -42,7 +36,9 @@ export default async function update(
 
         try {
             destinationMessages = await extractMessagesFromFile(destination)
-        } catch {}
+        } catch (err) {
+            console.error(err)
+        }
 
         const { keysToAdd, keysToKeep, removeCount } = makeDiff(
             sourceMessages,
@@ -82,11 +78,13 @@ export function makeDiff(
 ): DiffResult {
     const sourceKeys = Object.keys(sourceMessages)
     const destKeys = Object.keys(destinationMessages)
+    const sourceKeysSet = new Set(sourceKeys)
+    const destKeysSet = new Set(destKeys)
 
-    const keysToKeep = destKeys.filter((key) => sourceKeys.includes(key))
-    const keysToAdd = sourceKeys.filter((key) => !destKeys.includes(key))
+    const keysToKeep = destKeys.filter((key) => sourceKeysSet.has(key))
+    const keysToAdd = sourceKeys.filter((key) => !destKeysSet.has(key))
 
-    const removeCount = destKeys.length - keysToKeep.length
+    const removeCount = destKeysSet.size - keysToKeep.length
 
     return { keysToKeep, keysToAdd, removeCount }
 }

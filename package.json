@@ -1,6 +1,6 @@
 {
   "name": "@psycle/intl-maintainer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A CLI utility to maintain your INTL JSON files",
   "main": "bin/main.js",
   "bin": {
@@ -22,7 +22,8 @@
     "pretty": "prettier --write src/.",
     "pretty:check": "prettier --check src/.",
     "lint": "eslint --fix --ext .ts,.js,.json src/",
-    "use": "ts-node src/main.ts"
+    "use": "ts-node src/main.ts",
+    "release": "yarn build && yarn publish"
   },
   "dependencies": {
     "@formatjs/cli-lib": "^5.1.3",

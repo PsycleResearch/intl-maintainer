@@ -98,6 +98,7 @@ describe('update command', () => {
 
         expect(result).toEqual({})
     })
+
     test('merge with non empty source and empty destination', async () => {
         const source: Messages = {
             id1: {
@@ -112,6 +113,7 @@ describe('update command', () => {
 
         expect(result).toEqual(source)
     })
+
     test('merge with empty source and empty destination', async () => {
         const source: Messages = {}
         const destination: Messages = {}
@@ -122,6 +124,7 @@ describe('update command', () => {
 
         expect(result).toEqual({})
     })
+
     test('merge with nonempty source and non empty destination', async () => {
         const source: Messages = {
             id1: {
