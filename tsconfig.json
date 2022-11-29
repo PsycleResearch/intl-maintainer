@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "CommonJS",
         "target": "es2017",
         "lib": ["es2021"],
         "moduleResolution": "node",
@@ -15,5 +15,6 @@
         "downlevelIteration": true,
         "esModuleInterop": true
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }

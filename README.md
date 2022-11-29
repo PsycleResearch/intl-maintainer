@@ -8,32 +8,16 @@ yarn build
 
 ## Test locally
 
-Ensure you have build the CLI and that you have the following line in your `.bashrc` (or `.zshrc`, ...):
+You can test the tool by running :
 
 ```
-export PATH="$PATH:`yarn global bin`"
+npx ts-node src/index.ts
 ```
 
-If everything is ready, you can install the tool globally by running:
+## ROADMAP
 
-```
-yarn link --global
-```
-
-You can now test the tool by running:
-
-```
-npx @psycle/intl-maintainer
-```
-
-> If you get the following:
->
-> ```
-> sh: 1: intl-maintainer: Permission denied
-> ```
->
-> Try executing:
->
-> ```
-> chmod +x bin/index.js
-> ```
+-   [ ] More unit tests
+-   [ ] Integration tests
+-   [ ] Use [Format.JS Node API](https://formatjs.io/docs/tooling/cli/#node-api) to compile messages
+-   [ ] Use prompt to allow user to write new translations in the CLI
+    -   [ ] Use [Format.JS Node API](https://formatjs.io/docs/tooling/cli/#node-api) to check messages syntax
