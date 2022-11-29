@@ -1,6 +1,6 @@
 {
   "name": "@psycle/intl-maintainer",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "A CLI utility to maintain your INTL JSON files",
   "main": "bin/main.js",
   "bin": {
@@ -17,7 +17,7 @@
     "url": "https://github.com/PsycleResearch/intl-maintainer/issues"
   },
   "scripts": {
-    "build": "tsc --build --clean && tsc",
+    "build": "tsc --build --clean && tsc && chmod +x bin/main.js",
     "test": "jest",
     "pretty": "prettier --write src/.",
     "pretty:check": "prettier --check src/.",
